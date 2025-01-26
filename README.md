@@ -1,11 +1,11 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/242000617c277ba74b51/maintainability)](https://codeclimate.com/github/vearnfi/config/maintainability)
 
-# @vearnfi/config
+# @gasstation/config
 
-Repository containing a list of contract addresses associated with the vearn.finance protocol for each chain.
+Repository containing a list of contract addresses associated with the Gas Station protocol for each chain.
 
 ```
-npm i @vearnfi/config
+npm i gas_station_config
 ```
 
 ### Bumping package version

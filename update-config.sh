@@ -12,12 +12,11 @@ CURRENT_DIR=$(dirname "$CURRENT_DIR")
 echo "Absolute path of the current directory: $CURRENT_DIR"
 
 # Define the package name and projects
-PACKAGE_NAME="@vearnfi/config"
+PACKAGE_NAME="gas_station_config"
 PROJECTS=(
   "client"
+  "server/functions"
   "contracts"
-  "events-fetcher"
-  "firebase/functions"
 )
 
 # Function to update the package in a given project

@@ -1,6 +1,6 @@
 {
-  "name": "@vearnfi/config",
-  "version": "4.0.4",
+  "name": "gas_station_config",
+  "version": "0.1.2",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -17,15 +17,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vearnfi/config.git"
+    "url": "git+https://github.com/Gas-Pump/config.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/vearnfi/config/issues"
+    "url": "https://github.com/Gas-Pump/config/issues"
   },
-  "homepage": "https://github.com/vearnfi/config#readme",
+  "homepage": "https://github.com/Gas-Pump/config#readme",
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^6.14.0",
     "@typescript-eslint/parser": "^6.14.0",
