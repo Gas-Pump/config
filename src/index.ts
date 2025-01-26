@@ -176,7 +176,7 @@ const testChain: ChainData = {
   relayer: "0xB9704e77504333774Df3D84F01a984d1c5DC1B34",
   // getHeadEndpoint: "https://gethead-3co32ksh6a-uc.a.run.app",
   // setHeadEndpoint: "https://sethead-3co32ksh6a-uc.a.run.app",
-  handleTxSignatureEndpoint: "",
+  handleTxSignatureEndpoint: "https://us-central1-gaspumpdev.cloudfunctions.net/handletxsignature",
   // getUserSwapsEndpoint: "https://getuserswaps-3co32ksh6a-uc.a.run.app",
   // getUserStatsEndpoint: "https://getuserstats-3co32ksh6a-uc.a.run.app",
   // getTradesForecastEndpoint:
