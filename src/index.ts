@@ -23,6 +23,11 @@ export type Dex = {
   pairWETH_B3TR?: Address;
 };
 
+type Token = {
+  address: Address;
+  decimals: number;
+}
+
 /**
  * JavaScript CAIP-2 representation object.
  * @see https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-2.md
@@ -49,24 +54,18 @@ export type ChainData = {
     icon?: string;
     standard: string;
   }[];
-  /** VTHO contract address. */
-  vtho: Address;
-  /** B3TR contract address. */
-  b3tr: Address;
+  /** VTHO token data. */
+  vtho: Token;
+  /** B3TR token data. */
+  b3tr: Token;
   /** List of supported DEXs. */
   dexs: Dex[];
   /** VexWrapper contract address. */
   vexWrapper: Address;
-  /** Relayer contract address. */
-  relayer: Address;
-  /** Register events endpoint. */
-  handleTxSignatureEndpoint: string;
-  /** Endpoint to fetch latest block number. */
-  // getHeadEndpoint: string;
-  // setHeadEndpoint: string;
-  // getUserSwapsEndpoint: string;
-  // getUserStatsEndpoint: string;
-  // getTradesForecastEndpoint: string;
+  /** Gas Station contract address. */
+  gasStation: Address;
+  /** Delegate tx endpoint. */
+  delegatetTxEndpoint: string;
 };
 
 const mainChain: ChainData = {
@@ -100,8 +99,14 @@ const mainChain: ChainData = {
       standard: "none",
     },
   ],
-  vtho: "0x0000000000000000000000000000456E65726779",
-  b3tr: "0x5ef79995FE8a89e0812330E4378eB2660ceDe699",
+  vtho: {
+    address: "0x0000000000000000000000000000456E65726779",
+    decimals: 18,
+  },
+  b3tr: {
+    address: "0x5ef79995FE8a89e0812330E4378eB2660ceDe699",
+    decimals: 18,
+  },
   dexs: [
     {
       name: "verocket",
@@ -119,10 +124,10 @@ const mainChain: ChainData = {
     },
   ],
   vexWrapper: "0x3c3847A92B57A3163d26cc2eb22F53b33BaA34D8",
-  relayer: "0xff3C6dABd0DCaF77363d59fDBC52939073f88014",
+  gasStation: "0xff3C6dABd0DCaF77363d59fDBC52939073f88014",
   // getHeadEndpoint: "https://gethead-umgsnyajoq-uc.a.run.app",
   // setHeadEndpoint: "https://sethead-umgsnyajoq-uc.a.run.app",
-  handleTxSignatureEndpoint: "",
+  delegatetTxEndpoint: "",
   // getUserSwapsEndpoint: "https://getuserswaps-umgsnyajoq-uc.a.run.app",
   // getUserStatsEndpoint: "https://getuserstats-umgsnyajoq-uc.a.run.app",
   // getTradesForecastEndpoint: "https://gettradesforecast-umgsnyajoq-uc.a.run.app",
@@ -154,8 +159,14 @@ const testChain: ChainData = {
       standard: "none",
     },
   ],
-  vtho: "0x0000000000000000000000000000456E65726779",
-  b3tr: "0xbf64cf86894Ee0877C4e7d03936e35Ee8D8b864F",
+  vtho: {
+    address: "0x0000000000000000000000000000456E65726779",
+    decimals: 18,
+  },
+  b3tr: {
+    address: "0xbf64cf86894Ee0877C4e7d03936e35Ee8D8b864F",
+    decimals: 18,
+  },
   dexs: [
     {
       name: "verocket",
@@ -173,10 +184,10 @@ const testChain: ChainData = {
     },
   ],
   vexWrapper: "0x0bb72c2423cff281E9e7aa49b0ebb3a2D3280603",
-  relayer: "0xB9704e77504333774Df3D84F01a984d1c5DC1B34",
+  gasStation: "0xB9704e77504333774Df3D84F01a984d1c5DC1B34",
   // getHeadEndpoint: "https://gethead-3co32ksh6a-uc.a.run.app",
   // setHeadEndpoint: "https://sethead-3co32ksh6a-uc.a.run.app",
-  handleTxSignatureEndpoint: "https://us-central1-gaspumpdev.cloudfunctions.net/handletxsignature",
+  delegatetTxEndpoint: "https://us-central1-gaspumpdev.cloudfunctions.net/handletxsignature",
   // getUserSwapsEndpoint: "https://getuserswaps-3co32ksh6a-uc.a.run.app",
   // getUserStatsEndpoint: "https://getuserstats-3co32ksh6a-uc.a.run.app",
   // getTradesForecastEndpoint:
@@ -193,7 +204,7 @@ export const chains: Record<ChainId, ChainData> = {
     ...testChain,
     // getHeadEndpoint: "",
     // setHeadEndpoint: "http://127.0.0.1:5001/vefarmdev/us-central1/sethead",
-    handleTxSignatureEndpoint:
+    delegatetTxEndpoint:
       "http://127.0.0.1:5001/gaspumpdev/us-central1/handletxsignature",
   },
 };
