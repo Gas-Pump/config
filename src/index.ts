@@ -65,7 +65,7 @@ export type ChainData = {
   /** Gas Station contract address. */
   gasStation: Address;
   /** Delegate tx endpoint. */
-  delegatetTxEndpoint: string;
+  delegateTxEndpoint: string;
 };
 
 const mainChain: ChainData = {
@@ -127,7 +127,7 @@ const mainChain: ChainData = {
   gasStation: "0xff3C6dABd0DCaF77363d59fDBC52939073f88014",
   // getHeadEndpoint: "https://gethead-umgsnyajoq-uc.a.run.app",
   // setHeadEndpoint: "https://sethead-umgsnyajoq-uc.a.run.app",
-  delegatetTxEndpoint: "",
+  delegateTxEndpoint: "",
   // getUserSwapsEndpoint: "https://getuserswaps-umgsnyajoq-uc.a.run.app",
   // getUserStatsEndpoint: "https://getuserstats-umgsnyajoq-uc.a.run.app",
   // getTradesForecastEndpoint: "https://gettradesforecast-umgsnyajoq-uc.a.run.app",
@@ -164,7 +164,7 @@ const testChain: ChainData = {
     decimals: 18,
   },
   b3tr: {
-    address: "0xbf64cf86894Ee0877C4e7d03936e35Ee8D8b864F",
+    address: "0x90fb04D48db05A6d9963a09E643011675434aA2a", // MKT
     decimals: 18,
   },
   dexs: [
@@ -183,11 +183,11 @@ const testChain: ChainData = {
       // pairWETH_B3TR: "", //
     },
   ],
-  vexWrapper: "0x0bb72c2423cff281E9e7aa49b0ebb3a2D3280603",
-  gasStation: "0xB9704e77504333774Df3D84F01a984d1c5DC1B34",
+  vexWrapper: "0xc6Cc8Ff3a6252a0eCa6874601bBf78B9CCf6f062",
+  gasStation: "0x77dF9a7148128bcA704ECf79553Fc812916C1b22",
   // getHeadEndpoint: "https://gethead-3co32ksh6a-uc.a.run.app",
   // setHeadEndpoint: "https://sethead-3co32ksh6a-uc.a.run.app",
-  delegatetTxEndpoint: "https://us-central1-gaspumpdev.cloudfunctions.net/handletxsignature",
+  delegateTxEndpoint: "https://us-central1-gaspumpdev.cloudfunctions.net/handletxsignature",
   // getUserSwapsEndpoint: "https://getuserswaps-3co32ksh6a-uc.a.run.app",
   // getUserStatsEndpoint: "https://getuserstats-3co32ksh6a-uc.a.run.app",
   // getTradesForecastEndpoint:
@@ -204,7 +204,7 @@ export const chains: Record<ChainId, ChainData> = {
     ...testChain,
     // getHeadEndpoint: "",
     // setHeadEndpoint: "http://127.0.0.1:5001/vefarmdev/us-central1/sethead",
-    delegatetTxEndpoint:
+    delegateTxEndpoint:
       "http://127.0.0.1:5001/gaspumpdev/us-central1/handletxsignature",
   },
 };
