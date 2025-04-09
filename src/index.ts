@@ -187,7 +187,7 @@ const testChain: ChainData = {
   gasStation: "0x77dF9a7148128bcA704ECf79553Fc812916C1b22",
   // getHeadEndpoint: "https://gethead-3co32ksh6a-uc.a.run.app",
   // setHeadEndpoint: "https://sethead-3co32ksh6a-uc.a.run.app",
-  delegateTxEndpoint: "https://us-central1-gaspumpdev.cloudfunctions.net/handletxsignature",
+  delegateTxEndpoint: "https://handletxsignature-44hbcfrmlq-uc.a.run.app",
   // getUserSwapsEndpoint: "https://getuserswaps-3co32ksh6a-uc.a.run.app",
   // getUserStatsEndpoint: "https://getuserstats-3co32ksh6a-uc.a.run.app",
   // getTradesForecastEndpoint:
