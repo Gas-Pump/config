@@ -164,7 +164,7 @@ const testChain: ChainData = {
     decimals: 18,
   },
   b3tr: {
-    address: "0x90fb04D48db05A6d9963a09E643011675434aA2a", // MKT
+    address: "0xf2446638933DbAEDcAb2D9Dc6A9D388159c3F16B", // MKT
     decimals: 18,
   },
   dexs: [
@@ -184,7 +184,7 @@ const testChain: ChainData = {
     },
   ],
   vexWrapper: "0xc6Cc8Ff3a6252a0eCa6874601bBf78B9CCf6f062",
-  gasStation: "0x77dF9a7148128bcA704ECf79553Fc812916C1b22",
+  gasStation: "0xeb291A5F6D93A671c7CaBdB0A78c7D45320776bb",
   // getHeadEndpoint: "https://gethead-3co32ksh6a-uc.a.run.app",
   // setHeadEndpoint: "https://sethead-3co32ksh6a-uc.a.run.app",
   delegateTxEndpoint: "https://handletxsignature-44hbcfrmlq-uc.a.run.app",
