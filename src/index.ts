@@ -126,7 +126,7 @@ const mainChain: ChainData = {
     },
   ],
   gasPump: "0xff3C6dABd0DCaF77363d59fDBC52939073f88014",
-  delegateTxEndpoint: "",
+  delegateTxEndpoint: "https://delegategaspump-675g7uoq5a-uc.a.run.app",
 };
 
 const testChain: ChainData = {
