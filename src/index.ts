@@ -184,7 +184,7 @@ const testChain: ChainData = {
     },
   ],
   gasPump: "0xeb291A5F6D93A671c7CaBdB0A78c7D45320776bb",
-  delegateTxEndpoint: "https://handletxsignature-44hbcfrmlq-uc.a.run.app",
+  delegateTxEndpoint: "https://delegategaspump-44hbcfrmlq-uc.a.run.app",
 };
 
 /**
