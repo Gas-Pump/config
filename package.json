@@ -1,6 +1,6 @@
 {
-  "name": "gas_station_config",
-  "version": "0.2.7",
+  "name": "gas-pump-config",
+  "version": "0.1.0",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

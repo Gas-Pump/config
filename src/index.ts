@@ -1,6 +1,5 @@
 /// <reference path="../node_modules/@vechain/connex-types/index.d.ts" />
 
-
 export type Address = `0x${string}`;
 
 export const chainIds = [100009, 100010, 100011] as const;
@@ -23,10 +22,13 @@ export type Dex = {
   pairWETH_B3TR?: Address;
 };
 
-type Token = {
+export type TokenName = "vtho" | "b3tr";
+
+export type Token = {
+  name: TokenName;
   address: Address;
   decimals: number;
-}
+};
 
 /**
  * JavaScript CAIP-2 representation object.
@@ -54,16 +56,12 @@ export type ChainData = {
     icon?: string;
     standard: string;
   }[];
-  /** VTHO token data. */
-  vtho: Token;
-  /** B3TR token data. */
-  b3tr: Token;
+  /** List of whitelisted tokens. */
+  tokens: Token[];
   /** List of supported DEXs. */
   dexs: Dex[];
-  /** VexWrapper contract address. */
-  vexWrapper: Address;
-  /** Gas Station contract address. */
-  gasStation: Address;
+  /** Gas Pump contract address. */
+  gasPump: Address;
   /** Delegate tx endpoint. */
   delegateTxEndpoint: string;
 };
@@ -99,14 +97,18 @@ const mainChain: ChainData = {
       standard: "none",
     },
   ],
-  vtho: {
-    address: "0x0000000000000000000000000000456E65726779",
-    decimals: 18,
-  },
-  b3tr: {
-    address: "0x5ef79995FE8a89e0812330E4378eB2660ceDe699",
-    decimals: 18,
-  },
+  tokens: [
+    {
+      name: "vtho",
+      address: "0x0000000000000000000000000000456E65726779",
+      decimals: 18,
+    },
+    {
+      name: "b3tr",
+      address: "0x5ef79995FE8a89e0812330E4378eB2660ceDe699",
+      decimals: 18,
+    },
+  ],
   dexs: [
     {
       name: "verocket",
@@ -123,14 +125,8 @@ const mainChain: ChainData = {
       // pairWETH_B3TR: "", // B3TR-WETH is not on Vexchange!
     },
   ],
-  vexWrapper: "0x3c3847A92B57A3163d26cc2eb22F53b33BaA34D8",
-  gasStation: "0xff3C6dABd0DCaF77363d59fDBC52939073f88014",
-  // getHeadEndpoint: "https://gethead-umgsnyajoq-uc.a.run.app",
-  // setHeadEndpoint: "https://sethead-umgsnyajoq-uc.a.run.app",
+  gasPump: "0xff3C6dABd0DCaF77363d59fDBC52939073f88014",
   delegateTxEndpoint: "",
-  // getUserSwapsEndpoint: "https://getuserswaps-umgsnyajoq-uc.a.run.app",
-  // getUserStatsEndpoint: "https://getuserstats-umgsnyajoq-uc.a.run.app",
-  // getTradesForecastEndpoint: "https://gettradesforecast-umgsnyajoq-uc.a.run.app",
 };
 
 const testChain: ChainData = {
@@ -159,14 +155,18 @@ const testChain: ChainData = {
       standard: "none",
     },
   ],
-  vtho: {
-    address: "0x0000000000000000000000000000456E65726779",
-    decimals: 18,
-  },
-  b3tr: {
-    address: "0xf2446638933DbAEDcAb2D9Dc6A9D388159c3F16B", // MKT
-    decimals: 18,
-  },
+  tokens: [
+    {
+      name: "vtho",
+      address: "0x0000000000000000000000000000456E65726779",
+      decimals: 18,
+    },
+    {
+      name: "b3tr",
+      address: "0xf2446638933DbAEDcAb2D9Dc6A9D388159c3F16B", // MKT
+      decimals: 18,
+    },
+  ],
   dexs: [
     {
       name: "verocket",
@@ -183,15 +183,8 @@ const testChain: ChainData = {
       // pairWETH_B3TR: "", //
     },
   ],
-  vexWrapper: "0xc6Cc8Ff3a6252a0eCa6874601bBf78B9CCf6f062",
-  gasStation: "0xeb291A5F6D93A671c7CaBdB0A78c7D45320776bb",
-  // getHeadEndpoint: "https://gethead-3co32ksh6a-uc.a.run.app",
-  // setHeadEndpoint: "https://sethead-3co32ksh6a-uc.a.run.app",
+  gasPump: "0xeb291A5F6D93A671c7CaBdB0A78c7D45320776bb",
   delegateTxEndpoint: "https://handletxsignature-44hbcfrmlq-uc.a.run.app",
-  // getUserSwapsEndpoint: "https://getuserswaps-3co32ksh6a-uc.a.run.app",
-  // getUserStatsEndpoint: "https://getuserstats-3co32ksh6a-uc.a.run.app",
-  // getTradesForecastEndpoint:
-  //   "https://gettradesforecast-3co32ksh6a-uc.a.run.app",
 };
 
 /**
@@ -202,10 +195,8 @@ export const chains: Record<ChainId, ChainData> = {
   100010: testChain,
   100011: {
     ...testChain,
-    // getHeadEndpoint: "",
-    // setHeadEndpoint: "http://127.0.0.1:5001/vefarmdev/us-central1/sethead",
     delegateTxEndpoint:
-      "http://127.0.0.1:5001/gaspumpdev/us-central1/handletxsignature",
+      "http://127.0.0.1:5001/gaspumpdev/us-central1/delegategaspump",
   },
 };
 
