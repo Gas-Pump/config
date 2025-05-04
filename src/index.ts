@@ -1,6 +1,6 @@
 /// <reference path="../node_modules/@vechain/connex-types/index.d.ts" />
 
-import vetIcon from "./assets/token-icon_vet.png";
+import vetIcon from "../assets/token-icon_vet.png";
 
 export type Address = `0x${string}`;
 
