@@ -22,12 +22,40 @@ export type Dex = {
   pairWETH_B3TR?: Address;
 };
 
-export type TokenName = "vtho" | "b3tr";
+export type TokenSymbol =
+  | "VTHO"
+  | "B3TR"
+  | "USDGLO"
+  | "HAI"
+  | "SHA"
+  | "VEED"
+  | "YEET"
+  | "WOV"
+  | "VEUSD"
+  | "SHT"
+  | "WVET"
+  | "MVA"
+  | "VEX"
+  | "VPU"
+  | "GOLD"
+  | "JUR"
+  | "MVG"
+  | "VVET"
+  | "VSEA"
+  | "OCE"
+  | "PLA"
+  | "DBET"
+  | "EHRT"
+  | "BVET"
+  | "SQUAD"
+  | "SASS";
 
 export type Token = {
-  name: TokenName;
+  symbol: TokenSymbol;
+  name: string;
   address: Address;
   decimals: number;
+  icon: any;
 };
 
 /**
@@ -99,14 +127,186 @@ const mainChain: ChainData = {
   ],
   tokens: [
     {
-      name: "vtho",
+      symbol: "VTHO",
+      name: "VeThor",
       address: "0x0000000000000000000000000000456E65726779",
       decimals: 18,
+      icon: "../assets/token-icon_vtho.png",
     },
     {
-      name: "b3tr",
+      symbol: "B3TR",
+      name: "B3TR",
       address: "0x5ef79995FE8a89e0812330E4378eB2660ceDe699",
       decimals: 18,
+      icon: "../assets/token-icon_b3tr.png",
+    },
+    {
+      symbol: "USDGLO",
+      name: "Glo Dollar",
+      address: "0x29c630cCe4DdB23900f5Fe66Ab55e488C15b9F5e",
+      decimals: 18,
+      icon: "../assets/token-icon_usdglo.png",
+    },
+    {
+      symbol: "HAI",
+      name: "Hacken",
+      address: "0xaCc280010B2EE0efc770BCE34774376656D8cE14",
+      decimals: 8,
+      icon: "../assets/token-icon_hai.png",
+    },
+    {
+      symbol: "SHA",
+      name: "Safe Haven",
+      address: "0x5db3C8A942333f6468176a870dB36eEf120a34DC",
+      decimals: 18,
+      icon: "../assets/token-icon_sha.png",
+    },
+    {
+      symbol: "VEED",
+      name: "VEED Token",
+      address: "0x67fD63f6068962937EC81AB3Ae3bF9871E524FC9",
+      decimals: 18,
+      icon: "../assets/token-icon_veed.png",
+    },
+    {
+      symbol: "YEET",
+      name: "Yeet Coin",
+      address: "0xae4C53b120cba91a44832f875107cbc8FbEe185C",
+      decimals: 18,
+      icon: "../assets/token-icon_yeet.png",
+    },
+    {
+      symbol: "WOV",
+      name: "WorldOfV",
+      address: "0x170F4BA8e7ACF6510f55dB26047C83D13498AF8A",
+      decimals: 18,
+      icon: "../assets/token-icon_wov.png",
+    },
+    {
+      symbol: "VEUSD",
+      name: "VeUSD",
+      address: "0x4E17357053dA4b473e2daa2c65C2c949545724b8",
+      decimals: 6,
+      icon: "../assets/token-icon_veusd.png",
+    },
+    {
+      symbol: "SHT",
+      name: "SHT Coin",
+      address: "0x9AF004570f2a301D99F2cE4554E564951eE48e3c",
+      decimals: 18,
+      icon: "../assets/token-icon_sht.png",
+    },
+    {
+      symbol: "WVET",
+      name: "Wrapped VET",
+      address: "0xD8CCDD85abDbF68DFEc95f06c973e87B1b5A9997",
+      decimals: 18,
+      icon: "../assets/token-icon_wvet.png",
+    },
+    {
+      symbol: "MVA",
+      name: "MVA Token",
+      address: "0xC3Fd50A056dc4025875FA164CED1524C93053F29",
+      decimals: 18,
+      icon: "../assets/token-icon_mva.png",
+    },
+    {
+      symbol: "VEX",
+      name: "Vexchange",
+      address: "0x0BD802635eb9cEB3fCBe60470D2857B86841aab6",
+      decimals: 18,
+      icon: "../assets/token-icon_vex.png",
+    },
+    {
+      symbol: "VPU",
+      name: "VPunks Token",
+      address: "0xb0821559723dB89e0Bd14FEE81E13a3aaE007e65",
+      decimals: 18,
+      icon: "../assets/token-icon_vpu.png",
+    },
+    {
+      symbol: "GOLD",
+      name: "GOLD Token",
+      address: "0xFF3BC357600885aAA97506ea6e24fB21abA88fbD",
+      decimals: 18,
+      icon: "../assets/token-icon_gold.png",
+    },
+    {
+      symbol: "JUR",
+      name: "Jur",
+      address: "0x46209D5e5a49C1D403F4Ee3a0A88c3a27E29e58D",
+      decimals: 18,
+      icon: "../assets/token-icon_jur.png",
+    },
+    {
+      symbol: "MVG",
+      name: "Mad Viking Games",
+      address: "0x99763494A7B545f983ee9Fe02a3b5441c7EF1396",
+      decimals: 18,
+      icon: "../assets/token-icon_mvg.png",
+    },
+    {
+      symbol: "VVET",
+      name: "Veiled VET",
+      address: "0x45429A2255e7248e57fce99E7239aED3f84B7a53",
+      decimals: 18,
+      icon: "../assets/token-icon_vvet.png",
+    },
+    {
+      symbol: "VSEA",
+      name: "VeSea",
+      address: "0x23368c20C16F64ecbb30164a08666867Be22F216",
+      decimals: 18,
+      icon: "../assets/token-icon_vsea.png",
+    },
+    {
+      symbol: "OCE",
+      name: "OceanEx",
+      address: "0x0CE6661b4ba86a0EA7cA2Bd86a0De87b0B860F14",
+      decimals: 18,
+      icon: "../assets/token-icon_oce.png",
+    },
+    {
+      symbol: "PLA",
+      name: "Plair",
+      address: "0x89827F7bB951Fd8A56f8eF13C5bFEE38522F2E1F",
+      decimals: 18,
+      icon: "../assets/token-icon_pla.png",
+    },
+    {
+      symbol: "DBET",
+      name: "DecentBet",
+      address: "0x1b8EC6C2A45ccA481Da6F243Df0d7A5744aFc1f8",
+      decimals: 18,
+      icon: "../assets/token-icon_dbet.png",
+    },
+    {
+      symbol: "EHRT",
+      name: "8Hours Token",
+      address: "0xf8e1fAa0367298b55F57Ed17F7a2FF3F5F1D1628",
+      decimals: 18,
+      icon: "../assets/token-icon_ehrt.png",
+    },
+    {
+      symbol: "BVET",
+      name: "BetterSwap VET",
+      address: "0xf9b02b47694fd635A413F16dC7B38aF06Cc16fe5",
+      decimals: 18,
+      icon: "../assets/token-icon_bvet.png",
+    },
+    {
+      symbol: "SQUAD",
+      name: "Squad Token",
+      address: "0xB27a1Fb87935B85CDaA2E16468247278C74C5ec7",
+      decimals: 18,
+      icon: "../assets/token-icon_squad.png",
+    },
+    {
+      symbol: "SASS",
+      name: "SASS",
+      address: "0x84B0cAF6436AacE4e21D10f126963FDd53aC31eA",
+      decimals: 18,
+      icon: "../assets/token-icon_sass.png",
     },
   ],
   dexs: [
@@ -155,18 +355,14 @@ const testChain: ChainData = {
       standard: "none",
     },
   ],
-  tokens: [
-    {
-      name: "vtho",
-      address: "0x0000000000000000000000000000456E65726779",
-      decimals: 18,
-    },
-    {
-      name: "b3tr",
-      address: "0xf2446638933DbAEDcAb2D9Dc6A9D388159c3F16B", // MKT
-      decimals: 18,
-    },
-  ],
+  tokens: mainChain.tokens.map((t) =>
+    t.symbol === "VTHO"
+      ? { ...t }
+      : {
+          ...t,
+          address: "0xf2446638933DbAEDcAb2D9Dc6A9D388159c3F16B" /* MKT */,
+        },
+  ),
   dexs: [
     {
       name: "verocket",
