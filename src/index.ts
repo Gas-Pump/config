@@ -23,6 +23,7 @@ export type Dex = {
 };
 
 export type TokenSymbol =
+| "VET"
   | "VTHO"
   | "B3TR"
   | "USDGLO"
@@ -126,6 +127,7 @@ const mainChain: ChainData = {
     },
   ],
   tokens: [
+    { symbol: "VET", name: "VeChain", address: "0x0000000000000000000000000000000000000000", decimals: 18, icon: "../assets/token-icon_vet.png"},
     {
       symbol: "VTHO",
       name: "VeThor",
@@ -356,11 +358,11 @@ const testChain: ChainData = {
     },
   ],
   tokens: mainChain.tokens.map((t) =>
-    t.symbol === "VTHO"
+    ["VET", "VTHO"].includes(t.symbol)
       ? { ...t }
       : {
           ...t,
-          address: "0xf2446638933DbAEDcAb2D9Dc6A9D388159c3F16B" /* MKT */,
+          address: "0xf2446638933DbAEDcAb2D9Dc6A9D388159c3F16B", // MKT
         },
   ),
   dexs: [
