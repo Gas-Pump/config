@@ -23,7 +23,7 @@ export type Dex = {
 };
 
 export type TokenSymbol =
-| "VET"
+  | "VET"
   | "VTHO"
   | "B3TR"
   | "USDGLO"
@@ -127,7 +127,13 @@ const mainChain: ChainData = {
     },
   ],
   tokens: [
-    { symbol: "VET", name: "VeChain", address: "0x0000000000000000000000000000000000000000", decimals: 18, icon: "../assets/token-icon_vet.png"},
+    {
+      symbol: "VET",
+      name: "VeChain",
+      address: "0x0000000000000000000000000000000000000000",
+      decimals: 18,
+      icon: "../assets/token-icon_vet.png",
+    },
     {
       symbol: "VTHO",
       name: "VeThor",
