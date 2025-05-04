@@ -1,5 +1,7 @@
 /// <reference path="../node_modules/@vechain/connex-types/index.d.ts" />
 
+import vetIcon from "./assets/token-icon_vet.png";
+
 export type Address = `0x${string}`;
 
 export const chainIds = [100009, 100010, 100011] as const;
@@ -132,7 +134,7 @@ const mainChain: ChainData = {
       name: "VeChain",
       address: "0x0000000000000000000000000000000000000000",
       decimals: 18,
-      icon: "../assets/token-icon_vet.png",
+      icon: vetIcon,
     },
     {
       symbol: "VTHO",
