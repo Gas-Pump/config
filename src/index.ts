@@ -1,33 +1,5 @@
 /// <reference path="../node_modules/@vechain/connex-types/index.d.ts" />
 
-import vetIcon from "../assets/token-icon_vet.png";
-import vthoIcon from "../assets/token-icon_vtho.png";
-import b3trIcon from "../assets/token-icon_b3tr.png";
-import usdgloIcon from "../assets/token-icon_usdglo.png";
-import haiIcon from "../assets/token-icon_hai.png";
-import shaIcon from "../assets/token-icon_sha.png";
-import veedIcon from "../assets/token-icon_veed.png";
-import yeetIcon from "../assets/token-icon_yeet.png";
-import wovIcon from "../assets/token-icon_wov.png";
-import veusdIcon from "../assets/token-icon_veusd.png";
-import shtIcon from "../assets/token-icon_sht.png";
-import wvetIcon from "../assets/token-icon_wvet.png";
-import mvaIcon from "../assets/token-icon_mva.png";
-import vexIcon from "../assets/token-icon_vex.png";
-import vpuIcon from "../assets/token-icon_vpu.png";
-import goldIcon from "../assets/token-icon_gold.png";
-import jurIcon from "../assets/token-icon_jur.png";
-import mvgIcon from "../assets/token-icon_mvg.png";
-import vvetIcon from "../assets/token-icon_vvet.png";
-import vseaIcon from "../assets/token-icon_vsea.png";
-import oceIcon from "../assets/token-icon_oce.png";
-import plaIcon from "../assets/token-icon_pla.png";
-import dbetIcon from "../assets/token-icon_dbet.png";
-import ehrtIcon from "../assets/token-icon_ehrt.png";
-import bvetIcon from "../assets/token-icon_bvet.png";
-import squadIcon from "../assets/token-icon_squad.png";
-import sassIcon from "../assets/token-icon_sass.png";
-
 export type Address = `0x${string}`;
 
 export const chainIds = [100009, 100010, 100011] as const;
@@ -435,33 +407,3 @@ export const chains: Record<ChainId, ChainData> = {
 export function getChainData(chainId: ChainId): ChainData {
   return chains[chainId];
 }
-
-export const assets: Record<TokenSymbol, string> = {
-  VET: vetIcon,
-  VTHO: vthoIcon,
-  B3TR: b3trIcon,
-  USDGLO: usdgloIcon,
-  HAI: haiIcon,
-  SHA: shaIcon,
-  VEED: veedIcon,
-  YEET: yeetIcon,
-  WOV: wovIcon,
-  VEUSD: veusdIcon,
-  SHT: shtIcon,
-  WVET: wvetIcon,
-  MVA: mvaIcon,
-  VEX: vexIcon,
-  VPU: vpuIcon,
-  GOLD: goldIcon,
-  JUR: jurIcon,
-  MVG: mvgIcon,
-  VVET: vvetIcon,
-  VSEA: vseaIcon,
-  OCE: oceIcon,
-  PLA: plaIcon,
-  DBET: dbetIcon,
-  EHRT: ehrtIcon,
-  BVET: bvetIcon,
-  SQUAD: squadIcon,
-  SASS: sassIcon,
-};
