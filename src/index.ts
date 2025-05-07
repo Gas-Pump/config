@@ -387,7 +387,7 @@ const testChain: ChainData = {
       // pairWETH_B3TR: "", //
     },
   ],
-  gasPump: "0xeb291A5F6D93A671c7CaBdB0A78c7D45320776bb",
+  gasPump: "0xf7F8C7872BfE42267F68CEA30620c750Cd6B90ae",
   delegateTxEndpoint: "https://delegategaspump-44hbcfrmlq-uc.a.run.app",
 };
 
